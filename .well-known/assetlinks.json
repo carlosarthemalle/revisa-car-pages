@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "br.com.revisacar.app",
+      "sha256_cert_fingerprints": [
+        "2A:8A:DE:EF:A9:0B:2E:28:D0:1F:CE:3D:39:D5:6F:F3:8B:3A:86:DD:E4:95:AE:94:82:CA:02:36:6F:47:55:4B"
+      ]
+    }
+  }
+]
