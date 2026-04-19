@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade – AppRevisaCar</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-dark:   #0D3B8C;
+      --blue-main:   #1565C0;
+      --blue-light:  #E8F0FE;
+      --blue-soft:   #F0F4FF;
+      --green:       #1B8855;
+      --green-light: #EAF6EF;
+      --amber:       #B45309;
+      --amber-light: #FEF3C7;
+      --red:         #B91C1C;
+      --red-light:   #FEE2E2;
+      --text-main:   #111827;
+      --text-sub:    #4B5563;
+      --text-muted:  #9CA3AF;
+      --border:      #E5E7EB;
+      --bg:          #F3F4F6;
+      --white:       #FFFFFF;
+      --radius:      10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--blue-dark);
+      padding: 10px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .topbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+    }
+    .topbar-brand .dot {
+      width: 8px; height: 8px;
+      background: #60A5FA;
+      border-radius: 50%;
+    }
+    .topbar-label {
+      font-size: 0.78rem;
+      color: #93C5FD;
+      font-weight: 500;
+    }
+    .topbar-store-badge {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #fff;
+      margin-left: 16px;
+    }
+    .topbar-store-badge img {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+      vertical-align: middle;
+      filter: brightness(0) invert(1);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-main) 100%);
+      padding: 72px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM36 6V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-icon {
+      width: 64px; height: 64px;
+      background: rgba(255,255,255,0.12);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .hero h1 span { color: #93C5FD; }
+    .hero-sub {
+      color: rgba(255,255,255,0.75);
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+    .hero-pills {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      border-radius: 100px;
+      padding: 5px 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .pill img {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+      vertical-align: middle;
+      filter: brightness(0) invert(1);
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── SECTION ── */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--border);
+      background: var(--blue-soft);
+    }
+
+    .card-num {
+      background: var(--blue-main);
+      color: #fff;
+      border-radius: 8px;
+      width: 30px; height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+
+    .card-badge {
+      margin-left: auto;
+      background: #FFF7ED;
+      color: #C2410C;
+      border: 1px solid #FED7AA;
+      border-radius: 100px;
+      padding: 2px 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .card-body { padding: 24px 28px; }
+
+    p { margin-bottom: 14px; color: var(--text-sub); }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--text-main); }
+
+    ul { padding-left: 18px; margin-bottom: 14px; color: var(--text-sub); }
+    ul li { margin-bottom: 8px; }
+    ul:last-child { margin-bottom: 0; }
+
+    /* ── TABLE ── */
+    .table-wrap { overflow-x: auto; margin-top: 4px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      min-width: 480px;
+    }
+    thead tr { background: var(--blue-soft); }
+    th {
+      text-align: left;
+      padding: 11px 16px;
+      color: var(--blue-dark);
+      font-weight: 700;
+      border-bottom: 2px solid var(--blue-light);
+      white-space: nowrap;
+    }
+    td {
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-sub);
+      vertical-align: top;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: #FAFBFF; }
+
+    /* ── BADGES ── */
+    .tag {
+      display: inline-block;
+      border-radius: 100px;
+      padding: 2px 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .tag-blue   { background: var(--blue-light); color: var(--blue-main); }
+    .tag-green  { background: var(--green-light); color: var(--green); }
+    .tag-amber  { background: var(--amber-light); color: var(--amber); }
+    .tag-red    { background: var(--red-light);   color: var(--red); }
+
+    /* ── CALLOUT ── */
+    .callout {
+      display: flex;
+      gap: 12px;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 18px 0;
+      font-size: 0.9rem;
+    }
+    .callout:last-child { margin-bottom: 0; }
+    .callout-icon { font-size: 1.1rem; flex-shrink: 0; line-height: 1.6; }
+    .callout.blue   { background: var(--blue-soft);   border: 1px solid #BFDBFE; color: var(--blue-dark); }
+    .callout.green  { background: var(--green-light); border: 1px solid #A7F3D0; color: #064E3B; }
+    .callout.amber  { background: var(--amber-light); border: 1px solid #FDE68A; color: #78350F; }
+
+    code {
+      background: #F1F5F9;
+      border: 1px solid #E2E8F0;
+      border-radius: 5px;
+      padding: 1px 7px;
+      font-size: 0.83em;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--blue-dark);
+    }
+
+    a { color: var(--blue-main); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+
+    /* ── DIVIDER ── */
+    .section-label {
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      color: var(--text-muted);
+      margin: 36px 0 14px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--blue-dark);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 36px 24px;
+      font-size: 0.83rem;
+      line-height: 1.8;
+    }
+    footer strong { color: #fff; }
+    footer p { color: rgba(255,255,255,0.85); margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="topbar-brand">
+    <div class="dot"></div>
+    AppRevisaCar
+  </div>
+  <span class="topbar-label">Política de Privacidade</span>
+  <div style="display:flex;gap:8px;">
+    <div class="topbar-store-badge">
+      <img src="../assets/apple-logo.png" alt="Apple App Store" />
+      App Store
+    </div>
+    <div class="topbar-store-badge">
+      <img src="../assets/play.png" alt="Google Play Store" />
+      Play Store
+    </div>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-icon">🔒</div>
+  <h1>Política de <span>Privacidade</span></h1>
+  <p class="hero-sub">AppRevisaCar &nbsp;·&nbsp; Última atualização: 19 de abril de 2026</p>
+  <div class="hero-pills">
+    <span class="pill">
+      <img src="../assets/apple-logo.png" alt="Apple" style="width:14px;height:14px;object-fit:contain;vertical-align:middle;filter:brightness(0) invert(1);margin-right:5px;">
+      Apple App Store
+    </span>
+    <span class="pill">
+      <img src="../assets/play.png" alt="Google Play" style="width:14px;height:14px;object-fit:contain;vertical-align:middle;filter:brightness(0) invert(1);margin-right:5px;">
+      Google Play Store
+    </span>
+    <span class="pill">📋 LGPD · Lei nº 13.709/2018</span>
+  </div>
+</div>
+
+<div class="layout">
+
+  <!-- Intro -->
+  <div class="card">
+    <div class="card-body">
+      <p>
+        O <strong>AppRevisaCar</strong> é um aplicativo de gestão de veículos e manutenções,
+        disponível para Android e iOS. Esta Política de Privacidade descreve quais dados são
+        coletados, como são utilizados, onde são armazenados e quais são seus direitos como
+        usuário, em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD – Lei
+        nº 13.709/2018)</strong>, com os requisitos da <strong>Apple App Store</strong> e da
+        <strong>Google Play Store</strong>.
+      </p>
+      <p>
+        Ao instalar ou utilizar o aplicativo, você concorda com os termos desta política.
+        Caso não concorde, recomendamos que não utilize o app.
+      </p>
+    </div>
+  </div>
+
+  <p class="section-label">Coleta e Uso de Dados</p>
+
+  <!-- 1. Dados coletados -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">1</div>
+      <span class="card-title">Dados Coletados</span>
+    </div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Dado</th><th>Finalidade</th><th>Armazenamento</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nome, e-mail e telefone</strong></td>
+              <td>Identificação do usuário no app</td>
+              <td><span class="tag tag-blue">Local no dispositivo</span></td>
+            </tr>
+            <tr>
+              <td><strong>Conta Google (e-mail)</strong></td>
+              <td>Autenticação OAuth2 para integração com Google Drive</td>
+              <td><span class="tag tag-amber">Gerenciado pelo Google</span></td>
+            </tr>
+            <tr>
+              <td><strong>Documentos escaneados (PDF)</strong></td>
+              <td>Arquivos salvos na conta Google Drive do próprio usuário</td>
+              <td><span class="tag tag-amber">Google Drive do usuário</span></td>
+            </tr>
+            <tr>
+              <td><strong>Foto de perfil e fotos de veículo</strong></td>
+              <td>Personalização visual dentro do app</td>
+              <td><span class="tag tag-blue">Local no dispositivo</span></td>
+            </tr>
+            <tr>
+              <td><strong>Localização</strong></td>
+              <td>Registrar local onde manutenções foram realizadas (opcional)</td>
+              <td><span class="tag tag-blue">Local no dispositivo</span></td>
+            </tr>
+            <tr>
+              <td><strong>Dados de manutenção e revisões</strong></td>
+              <td>Histórico de serviços, alertas e relatórios</td>
+              <td><span class="tag tag-blue">Local no dispositivo</span></td>
+            </tr>
+            <tr>
+              <td><strong>Preferências e configurações</strong></td>
+              <td>Biometria, notificações, tema</td>
+              <td><span class="tag tag-blue">Local no dispositivo</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Privacy Nutrition Labels -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">2</div>
+      <span class="card-title">Dados Vinculados à sua Identidade</span>
+      <span class="card-badge">🍎 Apple Nutrition Labels</span>
+    </div>
+    <div class="card-body">
+      <p>Conforme exigido pela Apple (App Store Privacy Nutrition Labels):</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Tipo de dado</th><th>Vinculado a você?</th><th>Rastreamento?</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nome, e-mail, telefone</td>
+              <td><span class="tag tag-green">Sim – identificação</span></td>
+              <td><span class="tag tag-red">Não</span></td>
+            </tr>
+            <tr>
+              <td>E-mail da conta Google</td>
+              <td><span class="tag tag-green">Sim – autenticação</span></td>
+              <td><span class="tag tag-red">Não</span></td>
+            </tr>
+            <tr>
+              <td>Documentos / arquivos (Drive)</td>
+              <td><span class="tag tag-green">Sim – armazenamento pessoal</span></td>
+              <td><span class="tag tag-red">Não</span></td>
+            </tr>
+            <tr>
+              <td>Localização</td>
+              <td><span class="tag tag-amber">Opcional – não vinculada por padrão</span></td>
+              <td><span class="tag tag-red">Não</span></td>
+            </tr>
+            <tr>
+              <td>Fotos / imagens</td>
+              <td><span class="tag tag-amber">Vinculada ao perfil do app</span></td>
+              <td><span class="tag tag-red">Não</span></td>
+            </tr>
+            <tr>
+              <td>Dados de uso / diagnósticos</td>
+              <td><span class="tag tag-red">Não coletados</span></td>
+              <td><span class="tag tag-red">Não</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout green">
+        <span class="callout-icon">✅</span>
+        <span>O <strong>AppRevisaCar não rastreia</strong> o usuário entre apps ou sites de terceiros.
+        Não utilizamos o <em>Advertising Identifier (IDFA)</em> do iOS nem qualquer outra forma de
+        rastreamento para fins publicitários.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Permissões -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">3</div>
+      <span class="card-title">Permissões do Dispositivo</span>
+    </div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Permissão</th><th>Plataforma</th><th>Finalidade</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Câmera</strong> <code>CAMERA</code></td>
+              <td>Android · iOS</td>
+              <td>Escanear documentos do veículo (CNH, CRLV etc.) via Google ML Kit — processado localmente, sem envio de imagens</td>
+            </tr>
+            <tr>
+              <td><strong>Galeria / Fotos</strong> <code>NSPhotoLibraryUsageDescription</code></td>
+              <td>Android · iOS</td>
+              <td>Selecionar foto de perfil ou foto do veículo da galeria</td>
+            </tr>
+            <tr>
+              <td><strong>Face ID</strong> <code>NSFaceIDUsageDescription</code></td>
+              <td>iOS</td>
+              <td>Desbloqueio seguro do app — dados biométricos <strong>não são armazenados</strong> pelo app; o reconhecimento é feito pelo sistema operacional</td>
+            </tr>
+            <tr>
+              <td><strong>Biometria (Digital)</strong> <code>USE_BIOMETRIC</code></td>
+              <td>Android</td>
+              <td>Desbloqueio seguro do app por impressão digital — processado pelo sistema operacional</td>
+            </tr>
+            <tr>
+              <td><strong>Localização</strong> <code>LOCATION</code></td>
+              <td>Android · iOS</td>
+              <td>Registrar local de manutenções (opcional, solicitado apenas quando o usuário usa essa função)</td>
+            </tr>
+            <tr>
+              <td><strong>Notificações</strong> <code>POST_NOTIFICATIONS</code></td>
+              <td>Android · iOS</td>
+              <td>Lembretes de revisões e alertas de manutenção preventiva</td>
+            </tr>
+            <tr>
+              <td><strong>Internet</strong> <code>INTERNET</code></td>
+              <td>Android · iOS</td>
+              <td>Sincronização com Google Drive e recebimento de notificações via Firebase</td>
+            </tr>
+            <tr>
+              <td><strong>Alarmes exatos</strong> <code>SCHEDULE_EXACT_ALARM</code></td>
+              <td>Android 12+</td>
+              <td>Disparar lembretes de manutenção no horário exato configurado</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout blue">
+        <span class="callout-icon">ℹ️</span>
+        <span>Todas as permissões são solicitadas apenas no momento de uso da funcionalidade correspondente.
+        Nenhuma permissão é ativada em segundo plano sem consentimento explícito.</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label">Integrações e Segurança</p>
+
+  <!-- 4. Google Drive -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">4</div>
+      <span class="card-title">Integração com Google Drive</span>
+    </div>
+    <div class="card-body">
+      <p>
+        O AppRevisaCar permite que você salve documentos escaneados (CNH, CRLV, notas fiscais
+        de serviço etc.) diretamente na sua própria conta do Google Drive.
+      </p>
+      <ul>
+        <li>Utiliza o escopo <code>drive.file</code> — acesso restrito <strong>exclusivamente aos arquivos criados pelo próprio app</strong>.</li>
+        <li>O AppRevisaCar <strong>não acessa, não lê e não modifica</strong> outros arquivos do seu Google Drive.</li>
+        <li>Os arquivos ficam armazenados na pasta <strong>AppRevisaCar/documentos</strong> na sua conta Google Drive pessoal.</li>
+        <li>Você pode excluir os arquivos a qualquer momento pelo Google Drive ou pelo app.</li>
+        <li>Revogue o acesso a qualquer momento em: <a href="https://myaccount.google.com/permissions" target="_blank">myaccount.google.com/permissions</a></li>
+      </ul>
+      <div class="callout green">
+        <span class="callout-icon">✅</span>
+        <span>Seus documentos pertencem <strong>exclusivamente a você</strong>. O AppRevisaCar não tem acesso ao conteúdo dos arquivos após o upload.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Segurança -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">5</div>
+      <span class="card-title">Armazenamento e Segurança</span>
+    </div>
+    <div class="card-body">
+      <p>
+        Os dados do app (veículos, manutenções, preferências) são armazenados
+        <strong>localmente no seu dispositivo</strong> via banco de dados SQLite.
+        Nenhum servidor externo de propriedade do AppRevisaCar armazena seus dados pessoais.
+      </p>
+      <ul>
+        <li>Desbloqueio por biometria (impressão digital / Face ID) — delegado ao sistema operacional</li>
+        <li>Dados não são transmitidos sem ação explícita do usuário</li>
+        <li>Escopo mínimo de acesso ao Google Drive (<code>drive.file</code>)</li>
+        <li>Tokens de autenticação gerenciados pelo Google Sign-In SDK, não pelo app</li>
+        <li>Função de backup exportável pelo próprio usuário</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 6. Terceiros -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">6</div>
+      <span class="card-title">Serviços de Terceiros</span>
+    </div>
+    <div class="card-body">
+      <p>
+        O AppRevisaCar <strong>não vende, não aluga e não compartilha</strong> seus dados pessoais
+        com terceiros para fins comerciais. Os seguintes serviços são utilizados exclusivamente
+        para as funcionalidades descritas:
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Serviço</th><th>Finalidade</th><th>Política</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Google Sign-In</strong></td>
+              <td>Autenticação OAuth2 para acesso ao Google Drive</td>
+              <td><a href="https://policies.google.com/privacy" target="_blank">Ver política</a></td>
+            </tr>
+            <tr>
+              <td><strong>Google Drive API</strong></td>
+              <td>Armazenamento de documentos na conta do usuário</td>
+              <td><a href="https://policies.google.com/privacy" target="_blank">Ver política</a></td>
+            </tr>
+            <tr>
+              <td><strong>Firebase Cloud Messaging</strong></td>
+              <td>Envio de notificações push</td>
+              <td><a href="https://firebase.google.com/support/privacy" target="_blank">Ver política</a></td>
+            </tr>
+            <tr>
+              <td><strong>Google ML Kit</strong></td>
+              <td>Scanner de documentos — processado <strong>localmente</strong> no dispositivo</td>
+              <td><a href="https://developers.google.com/ml-kit/terms" target="_blank">Ver termos</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label">Direitos e Conformidade</p>
+
+  <!-- 7. Menores -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">7</div>
+      <span class="card-title">Privacidade de Menores</span>
+    </div>
+    <div class="card-body">
+      <p>
+        O AppRevisaCar é destinado a usuários com <strong>18 anos ou mais</strong>.
+        Não coletamos intencionalmente informações de menores de 18 anos.
+      </p>
+      <p>
+        Se você acredita que uma criança forneceu dados pessoais ao app, entre em contato pelo
+        e-mail abaixo para que possamos remover as informações imediatamente.
+      </p>
+      <div class="callout amber">
+        <span class="callout-icon">⚠️</span>
+        <span>Este aplicativo não é direcionado ao público infantil. Não está em conformidade com
+        o <em>Children's Online Privacy Protection Act (COPPA)</em> para uso por menores de 18 anos.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. LGPD -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">8</div>
+      <span class="card-title">Seus Direitos (LGPD)</span>
+    </div>
+    <div class="card-body">
+      <p>Em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você tem direito a:</p>
+      <ul>
+        <li><strong>Acesso</strong> — consultar quais dados estão armazenados no app</li>
+        <li><strong>Correção</strong> — atualizar informações incorretas no perfil</li>
+        <li><strong>Exclusão</strong> — solicitar remoção dos dados do app e do Google Drive</li>
+        <li><strong>Revogação</strong> — revogar permissões nas configurações do dispositivo ou em <a href="https://myaccount.google.com/permissions" target="_blank">myaccount.google.com/permissions</a></li>
+        <li><strong>Portabilidade</strong> — exportar seus dados via função de backup do app</li>
+        <li><strong>Oposição</strong> — opor-se ao uso de dados em situações previstas em lei</li>
+      </ul>
+      <div class="callout blue">
+        <span class="callout-icon">📬</span>
+        <span>Para exercer qualquer direito, envie e-mail para
+        <a href="mailto:suporte.apprevisacar@gmail.com">suporte.apprevisacar@gmail.com</a>.
+        Responderemos em até <strong>15 dias úteis</strong>.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Retenção -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">9</div>
+      <span class="card-title">Retenção de Dados</span>
+    </div>
+    <div class="card-body">
+      <p>
+        Os dados locais são mantidos enquanto o app estiver instalado no dispositivo.
+        Ao desinstalar, os dados são removidos automaticamente pelo sistema operacional.
+      </p>
+      <p>
+        Documentos salvos no Google Drive permanecem na conta do usuário mesmo após desinstalar o app,
+        podendo ser excluídos manualmente pelo Google Drive ou mediante solicitação ao suporte.
+      </p>
+    </div>
+  </div>
+
+  <!-- 10. Alterações -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">10</div>
+      <span class="card-title">Alterações nesta Política</span>
+    </div>
+    <div class="card-body">
+      <p>
+        Esta política pode ser atualizada para refletir mudanças no app, em legislações aplicáveis
+        ou em requisitos das lojas de aplicativos. A data de "última atualização" no topo desta
+        página sempre indicará a versão vigente.
+      </p>
+      <p>Alterações significativas serão comunicadas por notificação no app ou por e-mail.</p>
+    </div>
+  </div>
+
+  <!-- 11. Contato -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">11</div>
+      <span class="card-title">Contato e Encarregado de Dados (DPO)</span>
+    </div>
+    <div class="card-body">
+      <p>Para dúvidas, solicitações ou exercício de direitos relacionados à privacidade:</p>
+      <p>📧 <a href="mailto:suporte.apprevisacar@gmail.com">suporte.apprevisacar@gmail.com</a></p>
+      <p style="margin-top:10px; font-size:0.85rem; color:var(--text-muted);">
+        Esta política está disponível permanentemente nesta URL e também dentro do aplicativo,
+        na seção Perfil → Sobre → Política de Privacidade.
+      </p>
+    </div>
+  </div>
+
+</div><!-- /layout -->
+
+<footer>
+  <p><strong>AppRevisaCar</strong></p>
+  <p>© 2026 · Todos os direitos reservados</p>
+  <p style="margin-top:6px;">Conforme LGPD (Lei nº 13.709/2018) &nbsp;·&nbsp; Apple App Store Guidelines &nbsp;·&nbsp; Google Play Policy</p>
+</footer>
+
+</body>
+</html>
+
