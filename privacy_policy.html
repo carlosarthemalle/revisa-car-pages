@@ -307,7 +307,7 @@
 <!-- Topbar -->
 <div class="topbar">
   <div class="topbar-brand">
-    <img src="assets/icon.png" alt="AppRevisaCar" style="width:28px;height:28px;border-radius:7px;object-fit:cover;">
+    <img src="../assets/icon/icon.png" alt="AppRevisaCar" style="width:28px;height:28px;border-radius:7px;object-fit:cover;">
     AppRevisaCar
   </div>
   <span class="topbar-label">Política de Privacidade</span>
@@ -327,7 +327,7 @@
 <div class="hero">
   <div class="hero-icon">🔒</div>
   <h1>Política de <span>Privacidade</span></h1>
-  <p class="hero-sub">AppRevisaCar &nbsp;·&nbsp; Última atualização: 19 de abril de 2026</p>
+  <p class="hero-sub">AppRevisaCar &nbsp;·&nbsp; Última atualização: 30 de abril de 2026</p>
   <div class="hero-pills">
     <span class="pill">
       <img src="../assets/apple-logo.png" alt="Apple" style="width:14px;height:14px;object-fit:contain;vertical-align:middle;filter:brightness(0) invert(1);margin-right:5px;">
@@ -386,8 +386,13 @@
             </tr>
             <tr>
               <td><strong>Conta Google (e-mail)</strong></td>
-              <td>Autenticação OAuth2 para integração com Google Drive</td>
+              <td>Autenticação OAuth2 — login no app e integração com Google Drive</td>
               <td><span class="tag tag-amber">Gerenciado pelo Google</span></td>
+            </tr>
+            <tr>
+              <td><strong>Apple ID (nome e e-mail)</strong></td>
+              <td>Autenticação via Sign in with Apple — e-mail pode ser mascarado pelo usuário</td>
+              <td><span class="tag tag-amber">Gerenciado pela Apple</span></td>
             </tr>
             <tr>
               <td><strong>Documentos escaneados (PDF)</strong></td>
@@ -446,6 +451,11 @@
               <td><span class="tag tag-red">Não</span></td>
             </tr>
             <tr>
+              <td>Apple ID (Sign in with Apple)</td>
+              <td><span class="tag tag-green">Sim – autenticação</span></td>
+              <td><span class="tag tag-red">Não</span></td>
+            </tr>
+            <tr>
               <td>Documentos / arquivos (Drive)</td>
               <td><span class="tag tag-green">Sim – armazenamento pessoal</span></td>
               <td><span class="tag tag-red">Não</span></td>
@@ -473,6 +483,13 @@
         <span>O <strong>AppRevisaCar não rastreia</strong> o usuário entre apps ou sites de terceiros.
         Não utilizamos o <em>Advertising Identifier (IDFA)</em> do iOS nem qualquer outra forma de
         rastreamento para fins publicitários.</span>
+      </div>
+      <div class="callout blue">
+        <span class="callout-icon">🍎</span>
+        <span>O app oferece <strong>Sign in with Apple</strong> como opção equivalente de login,
+        em conformidade com a Diretriz 4.8 da Apple App Store. O Sign in with Apple permite que
+        o usuário mantenha o e-mail privado (e-mail mascarado) e não coleta dados para fins
+        publicitários.</span>
       </div>
     </div>
   </div>
@@ -628,8 +645,56 @@
               <td>Scanner de documentos — processado <strong>localmente</strong> no dispositivo</td>
               <td><a href="https://developers.google.com/ml-kit/terms" target="_blank">Ver termos</a></td>
             </tr>
+            <tr>
+              <td><strong>Sign in with Apple</strong></td>
+              <td>Login seguro via Apple ID — coleção limitada a nome e e-mail; e-mail pode ser mascarado pelo usuário; sem rastreamento para publicidade</td>
+              <td><a href="https://www.apple.com/legal/privacy/" target="_blank">Ver política</a></td>
+            </tr>
+            <tr>
+              <td><strong>Supabase</strong></td>
+              <td>Autenticação e armazenamento do perfil do usuário (nome, e-mail) — utilizado por todos os métodos de login (e-mail/senha, Google e Apple)</td>
+              <td><a href="https://supabase.com/privacy" target="_blank">Ver política</a></td>
+            </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label">Exclusão de Conta e Dados</p>
+
+  <!-- Exclusão de Conta -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num" style="background:#B91C1C;">🗑</div>
+      <span class="card-title">Exclusão de Conta</span>
+      <span class="card-badge" style="background:#FEE2E2;color:#B91C1C;border-color:#FECACA;">Guideline 5.1.1(v)</span>
+    </div>
+    <div class="card-body">
+      <p>
+        Em conformidade com as diretrizes da <strong>Apple App Store (5.1.1(v))</strong> e da
+        <strong>Google Play Store</strong>, o AppRevisaCar oferece exclusão completa de conta
+        diretamente no aplicativo, sem necessidade de contato com suporte.
+      </p>
+      <p><strong>Como excluir sua conta:</strong></p>
+      <ol style="padding-left:18px;margin-bottom:14px;color:var(--text-sub);">
+        <li style="margin-bottom:8px;">Acesse <strong>Perfil</strong> no menu inferior</li>
+        <li style="margin-bottom:8px;">Toque em <strong>Segurança</strong></li>
+        <li style="margin-bottom:8px;">Toque em <strong>"Excluir minha conta"</strong></li>
+        <li style="margin-bottom:8px;">Confirme a exclusão na caixa de diálogo</li>
+      </ol>
+      <p>A exclusão de conta remove permanentemente:</p>
+      <ul>
+        <li>Todos os dados locais (banco de dados SQLite, preferências)</li>
+        <li>Conta de autenticação no servidor (Supabase)</li>
+        <li>Perfil e histórico de manutenções vinculado à conta</li>
+      </ul>
+      <div class="callout amber">
+        <span class="callout-icon">⚠️</span>
+        <span>Documentos salvos no Google Drive <strong>não são excluídos automaticamente</strong>
+        junto com a conta do app. Para removê-los, acesse sua conta do Google Drive em
+        <a href="https://drive.google.com" target="_blank">drive.google.com</a> e exclua
+        a pasta <strong>AppRevisaCar/documentos</strong> manualmente.</span>
       </div>
     </div>
   </div>
@@ -670,7 +735,7 @@
       <ul>
         <li><strong>Acesso</strong> — consultar quais dados estão armazenados no app</li>
         <li><strong>Correção</strong> — atualizar informações incorretas no perfil</li>
-        <li><strong>Exclusão</strong> — solicitar remoção dos dados do app e do Google Drive</li>
+        <li><strong>Exclusão</strong> — excluir sua conta diretamente em <strong>Perfil → Segurança → Excluir minha conta</strong>, sem necessidade de contato com suporte</li>
         <li><strong>Revogação</strong> — revogar permissões nas configurações do dispositivo ou em <a href="https://myaccount.google.com/permissions" target="_blank">myaccount.google.com/permissions</a></li>
         <li><strong>Portabilidade</strong> — exportar seus dados via função de backup do app</li>
         <li><strong>Oposição</strong> — opor-se ao uso de dados em situações previstas em lei</li>
@@ -738,7 +803,7 @@
 
 <footer>
   <p>
-    <img src="assets/icon.png" alt="AppRevisaCar" style="width:40px;height:40px;border-radius:10px;vertical-align:middle;margin-bottom:8px;display:block;margin-left:auto;margin-right:auto;">
+    <img src="../assets/icon/icon.png" alt="AppRevisaCar" style="width:40px;height:40px;border-radius:10px;vertical-align:middle;margin-bottom:8px;display:block;margin-left:auto;margin-right:auto;">
     <strong>AppRevisaCar</strong>
   </p>
   <p>© 2026 · Todos os direitos reservados</p>
