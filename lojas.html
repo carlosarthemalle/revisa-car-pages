@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RevisaCar - Baixe o aplicativo</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #0A1A3C;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 40px 20px 10px;
+        }
+
+        .logo {
+            width: 260px;
+            height: auto;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            color: #222;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #0A1A3C;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6rem;
+            margin: 0 auto 28px;
+            max-width: 680px;
+        }
+
+        .store-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .store-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            min-width: 220px;
+            padding: 14px 22px;
+            border-radius: 8px;
+            background: #0A1A3C;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .store-button:hover {
+            background: #12306c;
+            transform: translateY(-2px);
+        }
+
+        .store-button img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+
+        .store-button.apple-store img {
+            filter: brightness(0) invert(1);
+        }
+
+        footer {
+            padding: 20px;
+            margin-top: 30px;
+            color: #d0d0d0;
+        }
+
+        @media (max-width: 520px) {
+            .logo {
+                width: 220px;
+            }
+
+            .container {
+                margin: 0 16px;
+                padding: 24px 18px;
+            }
+
+            .store-button {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="assets/icon.png" class="logo" alt="RevisaCar">
+    </header>
+
+    <div class="container">
+        <h1>Baixe o RevisaCar</h1>
+        <p>
+            Escolha sua loja de aplicativos para instalar o RevisaCar e começar a gerenciar as revisões do seu veículo.
+        </p>
+
+        <div class="store-buttons">
+            <a class="store-button apple-store" href="https://apps.apple.com/br/app/apprevisacar/id6761346242" aria-label="Baixar na Apple Store">
+                <img src="assets/apple-logo.png" alt="">
+                Apple Store
+            </a>
+
+            <a class="store-button" href="https://play.google.com/store/apps/details?id=br.com.revisacar.app&pcampaignid=web_share" aria-label="Baixar na Play Store">
+                <img src="assets/play.png" alt="">
+                Play Store
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 RevisaCar — Todos os direitos reservados
+    </footer>
+
+</body>
+</html>
