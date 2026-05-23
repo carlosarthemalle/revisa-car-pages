@@ -301,6 +301,51 @@
       box-shadow: 0 14px 28px rgba(15, 28, 46, 0.24);
   }
 
+  .social-strip {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 24px;
+      padding: 26px;
+      border: 1px solid var(--primary-100);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 12px 28px rgba(30, 58, 95, 0.1);
+  }
+
+  .social-strip .eyebrow {
+      margin-bottom: 14px;
+  }
+
+  .social-strip h2 {
+      margin-bottom: 8px;
+      color: var(--primary-700);
+      font-size: 1.54rem;
+      line-height: 1.22;
+  }
+
+  .social-strip p:last-child {
+      margin-bottom: 0;
+      color: var(--slate-700);
+      line-height: 1.55;
+  }
+
+  .button.social {
+      border-color: rgba(14, 165, 233, 0.24);
+      background:
+          linear-gradient(var(--white), var(--white)) padding-box,
+          linear-gradient(135deg, #0ea5e9, #10b981, #f59e0b) border-box;
+      color: var(--primary-700);
+      white-space: nowrap;
+      box-shadow: 0 12px 24px rgba(30, 58, 95, 0.12);
+  }
+
+  .button.social:hover,
+  .button.social:focus-visible {
+      border-color: transparent;
+      box-shadow: 0 16px 30px rgba(30, 58, 95, 0.18);
+  }
+
   footer {
       display: flex;
       align-items: center;
@@ -323,6 +368,12 @@
       outline: none;
   }
 
+  .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+  }
+
   @media (max-width: 900px) {
       main {
           gap: 58px;
@@ -331,6 +382,7 @@
 
       .hero,
       .workflow,
+      .social-strip,
       .download-strip {
           grid-template-columns: 1fr;
       }
@@ -367,6 +419,7 @@
       }
 
       .hero-panel,
+      .social-strip,
       .download-strip {
           padding: 18px;
       }
