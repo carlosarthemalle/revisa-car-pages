@@ -3,75 +3,164 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RevisaCar - Gerencie suas revisões automotivas</title>
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: #0A1A3C; /* Azul do escudo do logo */
-            color: white;
-            text-align: center;
-        }
-
-        header {
-            padding: 40px 20px 10px;
-        }
-
-        .logo {
-            width: 260px;
-            height: auto;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            color: #222;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-        }
-
-        h1 {
-            color: #0A1A3C; /* Azul do logo */
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6rem;
-        }
-
-        footer {
-            padding: 20px;
-            margin-top: 30px;
-            color: #d0d0d0;
-        }
-    </style>
+    <meta name="description" content="Conheça o RevisaCar, aplicativo para organizar revisões, documentos, manutenções e lembretes do seu veículo." />
+    <title>RevisaCar - Gestão de revisões veiculares</title>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
 </head>
 <body>
+    <div class="page">
+        <header class="topbar" aria-label="RevisaCar">
+            <a class="brand" href="./" aria-label="Página inicial do RevisaCar">
+                <img src="assets/icon.png" alt="" />
+                <span>
+                    <strong>RevisaCar</strong>
+                    <span>Gestão de revisões veiculares</span>
+                </span>
+            </a>
 
-    <header>
-        <img src="assets/icon.png" class="logo">
-    </header>
+            <nav class="nav-links" aria-label="Navegação principal">
+                <a href="#recursos">Recursos</a>
+                <a href="privacy_policy.html">Privacidade</a>
+                <a class="download-link" href="lojas.html">Baixar app</a>
+            </nav>
+        </header>
 
-    <div class="container">
-        <h1>RevisaCar</h1>
-        <p>
-            O RevisaCar é o aplicativo desenvolvido para simplificar o controle de revisões preventivas e corretivas do seu veículo. 
-            Com ele, você organiza informações importantes, registra manutenções, acompanha histórico e recebe notificações de lembretes de revisão.
-        </p>
+        <main>
+            <section class="hero" aria-labelledby="titulo-principal">
+                <div class="hero-copy">
+                    <p class="eyebrow">Aplicativo para cuidar do seu veículo</p>
+                    <h1 id="titulo-principal">Revisões, documentos e lembretes do carro em um só lugar</h1>
+                    <p class="lead">
+                        O RevisaCar simplifica o controle de manutenções preventivas e corretivas,
+                        ajuda a acompanhar o histórico do veículo e lembra você dos próximos cuidados.
+                    </p>
 
-        <p>
-            A missão do RevisaCar é garantir que você tenha sempre seu carro em dia com as manutenções, aumentando a segurança, a vida útil do veículo e evitando gastos imprevistos.
-        </p>
+                    <div class="actions" aria-label="Ações principais">
+                        <a class="button primary" href="lojas.html">Baixar o aplicativo</a>
+                        <a class="button secondary" href="#recursos">Ver recursos</a>
+                    </div>
+                </div>
+
+                <aside class="hero-panel" aria-label="Resumo do aplicativo">
+                    <div class="app-card">
+                        <img src="assets/icon.png" alt="" />
+                        <span>
+                            <strong>RevisaCar</strong>
+                            <span>Organização veicular simples para o dia a dia.</span>
+                        </span>
+                    </div>
+
+                    <ul class="status-list">
+                        <li>
+                            <span class="status-icon" aria-hidden="true">1</span>
+                            <span>
+                                <strong>Histórico centralizado</strong>
+                                <span>Registre serviços, revisões e informações importantes.</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="status-icon" aria-hidden="true">2</span>
+                            <span>
+                                <strong>Alertas de revisão</strong>
+                                <span>Receba lembretes para manter o veículo em dia.</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="status-icon" aria-hidden="true">3</span>
+                            <span>
+                                <strong>Documentos reunidos</strong>
+                                <span>Guarde arquivos e comprovantes ligados ao carro.</span>
+                            </span>
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section id="recursos" aria-labelledby="titulo-recursos">
+                <div class="section-heading">
+                    <h2 id="titulo-recursos">Mais controle para evitar esquecimentos e gastos imprevistos</h2>
+                    <p>
+                        A proposta do RevisaCar é deixar as informações do veículo fáceis de consultar,
+                        com uma rotina simples para registrar o que já foi feito e o que ainda precisa de atenção.
+                    </p>
+                </div>
+
+                <div class="feature-grid">
+                    <article class="feature">
+                        <span class="feature-icon" aria-hidden="true">OK</span>
+                        <h3>Revisões organizadas</h3>
+                        <p>Cadastre manutenções preventivas e corretivas para acompanhar o histórico completo do veículo.</p>
+                    </article>
+
+                    <article class="feature">
+                        <span class="feature-icon" aria-hidden="true">+</span>
+                        <h3>Consulta rápida</h3>
+                        <p>Acesse dados importantes sem depender de anotações soltas, mensagens antigas ou papéis perdidos.</p>
+                    </article>
+
+                    <article class="feature">
+                        <span class="feature-icon" aria-hidden="true">!</span>
+                        <h3>Lembretes úteis</h3>
+                        <p>Receba notificações para revisar prazos, reduzir riscos e cuidar melhor da vida útil do carro.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="workflow" aria-labelledby="titulo-funcionamento">
+                <div class="document-visual" aria-hidden="true">
+                    <img src="assets/document.png" alt="" loading="lazy" />
+                </div>
+
+                <div>
+                    <div class="section-heading">
+                        <h2 id="titulo-funcionamento">Feito para acompanhar a rotina real do proprietário</h2>
+                        <p>
+                            O app funciona como uma central do veículo: você registra eventos importantes,
+                            mantém documentos por perto e consulta o histórico quando precisar.
+                        </p>
+                    </div>
+
+                    <ol class="steps">
+                        <li>
+                            <span class="step-number">1</span>
+                            <span>
+                                <strong>Adicione as informações do veículo</strong>
+                                <span>Organize dados que ajudam a acompanhar revisões e manutenções.</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="step-number">2</span>
+                            <span>
+                                <strong>Registre cada manutenção</strong>
+                                <span>Monte um histórico útil para decisões futuras e consultas rápidas.</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="step-number">3</span>
+                            <span>
+                                <strong>Acompanhe os próximos cuidados</strong>
+                                <span>Use lembretes para manter o carro em dia com mais tranquilidade.</span>
+                            </span>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="download-strip" aria-labelledby="titulo-download">
+                <div>
+                    <h2 id="titulo-download">Instale o RevisaCar no seu celular</h2>
+                    <p>Abra a página de lojas para escolher App Store ou Google Play.</p>
+                </div>
+
+                <a class="button" href="lojas.html">Ir para as lojas</a>
+            </section>
+        </main>
+
+        <footer>
+            <span>&copy; 2025 RevisaCar. Todos os direitos reservados.</span>
+            <a href="privacy_policy.html">Política de privacidade</a>
+        </footer>
     </div>
-
-    <footer>
-        © 2025 RevisaCar — Todos os direitos reservados
-    </footer>
-
 </body>
 </html>

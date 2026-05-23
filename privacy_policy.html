@@ -3,348 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Política de Privacidade – AppRevisaCar</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --blue-dark:   #0D3B8C;
-      --blue-main:   #1565C0;
-      --blue-light:  #E8F0FE;
-      --blue-soft:   #F0F4FF;
-      --green:       #1B8855;
-      --green-light: #EAF6EF;
-      --amber:       #B45309;
-      --amber-light: #FEF3C7;
-      --red:         #B91C1C;
-      --red-light:   #FEE2E2;
-      --text-main:   #111827;
-      --text-sub:    #4B5563;
-      --text-muted:  #9CA3AF;
-      --border:      #E5E7EB;
-      --bg:          #F3F4F6;
-      --white:       #FFFFFF;
-      --radius:      10px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-      line-height: 1.75;
-      font-size: 15px;
-    }
-
-    /* ── TOPBAR ── */
-    .topbar {
-      background: var(--blue-dark);
-      padding: 10px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .topbar-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.3px;
-    }
-    .topbar-brand .dot {
-      width: 8px; height: 8px;
-      background: #60A5FA;
-      border-radius: 50%;
-    }
-    .topbar-label {
-      font-size: 0.78rem;
-      color: #93C5FD;
-      font-weight: 500;
-    }
-    .topbar-store-badge {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 100px;
-      padding: 4px 12px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #fff;
-      margin-left: 16px;
-    }
-    .topbar-store-badge img {
-      width: 16px;
-      height: 16px;
-      object-fit: contain;
-      vertical-align: middle;
-      filter: brightness(0) invert(1);
-    }
-
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-main) 100%);
-      padding: 72px 24px 64px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM36 6V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-    .hero-icon {
-      width: 64px; height: 64px;
-      background: rgba(255,255,255,0.12);
-      border: 2px solid rgba(255,255,255,0.2);
-      border-radius: 18px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .hero h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.5px;
-      margin-bottom: 10px;
-    }
-    .hero h1 span { color: #93C5FD; }
-    .hero-sub {
-      color: rgba(255,255,255,0.75);
-      font-size: 1rem;
-      margin-bottom: 24px;
-    }
-    .hero-pills {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .pill {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #fff;
-      border-radius: 100px;
-      padding: 5px 16px;
-      font-size: 0.82rem;
-      font-weight: 600;
-    }
-    .pill img {
-      width: 16px;
-      height: 16px;
-      object-fit: contain;
-      vertical-align: middle;
-      filter: brightness(0) invert(1);
-    }
-
-    /* ── LAYOUT ── */
-    .layout {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-
-    /* ── SECTION ── */
-    .card {
-      background: var(--white);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      margin-bottom: 20px;
-      overflow: hidden;
-    }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 20px 28px;
-      border-bottom: 1px solid var(--border);
-      background: var(--blue-soft);
-    }
-
-    .card-num {
-      background: var(--blue-main);
-      color: #fff;
-      border-radius: 8px;
-      width: 30px; height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 800;
-      flex-shrink: 0;
-    }
-
-    .card-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--blue-dark);
-    }
-
-    .card-badge {
-      margin-left: auto;
-      background: #FFF7ED;
-      color: #C2410C;
-      border: 1px solid #FED7AA;
-      border-radius: 100px;
-      padding: 2px 10px;
-      font-size: 0.75rem;
-      font-weight: 700;
-    }
-
-    .card-body { padding: 24px 28px; }
-
-    p { margin-bottom: 14px; color: var(--text-sub); }
-    p:last-child { margin-bottom: 0; }
-    strong { color: var(--text-main); }
-
-    ul { padding-left: 18px; margin-bottom: 14px; color: var(--text-sub); }
-    ul li { margin-bottom: 8px; }
-    ul:last-child { margin-bottom: 0; }
-
-    /* ── TABLE ── */
-    .table-wrap { overflow-x: auto; margin-top: 4px; }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.88rem;
-      min-width: 480px;
-    }
-    thead tr { background: var(--blue-soft); }
-    th {
-      text-align: left;
-      padding: 11px 16px;
-      color: var(--blue-dark);
-      font-weight: 700;
-      border-bottom: 2px solid var(--blue-light);
-      white-space: nowrap;
-    }
-    td {
-      padding: 11px 16px;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-sub);
-      vertical-align: top;
-    }
-    tbody tr:last-child td { border-bottom: none; }
-    tbody tr:hover { background: #FAFBFF; }
-
-    /* ── BADGES ── */
-    .tag {
-      display: inline-block;
-      border-radius: 100px;
-      padding: 2px 10px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-    .tag-blue   { background: var(--blue-light); color: var(--blue-main); }
-    .tag-green  { background: var(--green-light); color: var(--green); }
-    .tag-amber  { background: var(--amber-light); color: var(--amber); }
-    .tag-red    { background: var(--red-light);   color: var(--red); }
-
-    /* ── CALLOUT ── */
-    .callout {
-      display: flex;
-      gap: 12px;
-      border-radius: 8px;
-      padding: 14px 18px;
-      margin: 18px 0;
-      font-size: 0.9rem;
-    }
-    .callout:last-child { margin-bottom: 0; }
-    .callout-icon { font-size: 1.1rem; flex-shrink: 0; line-height: 1.6; }
-    .callout.blue   { background: var(--blue-soft);   border: 1px solid #BFDBFE; color: var(--blue-dark); }
-    .callout.green  { background: var(--green-light); border: 1px solid #A7F3D0; color: #064E3B; }
-    .callout.amber  { background: var(--amber-light); border: 1px solid #FDE68A; color: #78350F; }
-
-    code {
-      background: #F1F5F9;
-      border: 1px solid #E2E8F0;
-      border-radius: 5px;
-      padding: 1px 7px;
-      font-size: 0.83em;
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      color: var(--blue-dark);
-    }
-
-    a { color: var(--blue-main); text-decoration: none; font-weight: 500; }
-    a:hover { text-decoration: underline; }
-
-    /* ── DIVIDER ── */
-    .section-label {
-      text-transform: uppercase;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      color: var(--text-muted);
-      margin: 36px 0 14px;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--blue-dark);
-      color: rgba(255,255,255,0.85);
-      text-align: center;
-      padding: 36px 24px;
-      font-size: 0.83rem;
-      line-height: 1.8;
-    }
-    footer strong { color: #fff; }
-    footer p { color: rgba(255,255,255,0.85); margin-bottom: 0; }
-  </style>
+  <meta name="description" content="Política de Privacidade do RevisaCar, aplicativo para gestão de revisões, documentos e manutenções veiculares." />
+  <title>Política de Privacidade - RevisaCar</title>
+  <link rel="stylesheet" href="assets/css/privacy-policy.css" />
 </head>
 <body>
 
-<!-- Topbar -->
-<div class="topbar">
-  <div class="topbar-brand">
-    <img src="../assets/icon/icon.png" alt="AppRevisaCar" style="width:28px;height:28px;border-radius:7px;object-fit:cover;">
-    AppRevisaCar
-  </div>
-  <span class="topbar-label">Política de Privacidade</span>
-  <div style="display:flex;gap:8px;">
-    <div class="topbar-store-badge">
-      <img src="../assets/apple-logo.png" alt="Apple App Store" />
-      App Store
-    </div>
-    <div class="topbar-store-badge">
-      <img src="../assets/play.png" alt="Google Play Store" />
-      Play Store
-    </div>
-  </div>
-</div>
+<header class="topbar" aria-label="RevisaCar">
+  <a class="brand" href="./" aria-label="Página inicial do RevisaCar">
+    <img src="assets/icon.png" alt="" />
+    <span>
+      <strong>RevisaCar</strong>
+      <span>Gestão de revisões veiculares</span>
+    </span>
+  </a>
 
-<!-- Hero -->
-<div class="hero">
-  <div class="hero-icon">🔒</div>
-  <h1>Política de <span>Privacidade</span></h1>
-  <p class="hero-sub">AppRevisaCar &nbsp;·&nbsp; Última atualização: 30 de abril de 2026</p>
-  <div class="hero-pills">
-    <span class="pill">
-      <img src="../assets/apple-logo.png" alt="Apple" style="width:14px;height:14px;object-fit:contain;vertical-align:middle;filter:brightness(0) invert(1);margin-right:5px;">
-      Apple App Store
-    </span>
-    <span class="pill">
-      <img src="../assets/play.png" alt="Google Play" style="width:14px;height:14px;object-fit:contain;vertical-align:middle;filter:brightness(0) invert(1);margin-right:5px;">
-      Google Play Store
-    </span>
-    <span class="pill">
-      <img src="../assets/document.png" alt="LGPD" style="width:14px;height:14px;object-fit:contain;vertical-align:middle;filter:brightness(0) invert(1);margin-right:5px;">
-      LGPD · Lei nº 13.709/2018
-    </span>
-  </div>
-</div>
+  <nav class="nav-links" aria-label="Navegação principal">
+    <a href="./">Início</a>
+    <a href="lojas.html">Lojas</a>
+    <a class="download-link" href="lojas.html">Baixar app</a>
+  </nav>
+</header>
 
-<div class="layout">
+<section class="policy-hero" aria-labelledby="titulo-privacidade">
+  <div class="policy-hero-inner">
+    <p class="eyebrow">Privacidade e dados</p>
+    <h1 id="titulo-privacidade">Política de Privacidade</h1>
+    <p class="hero-sub">
+      RevisaCar · Última atualização: 30 de abril de 2026.
+      Esta página explica quais dados são tratados pelo app e quais direitos você tem.
+    </p>
+    <div class="hero-pills" aria-label="Referências da política">
+      <span class="pill">
+        <img src="assets/apple-logo.png" alt="" />
+        Apple App Store
+      </span>
+      <span class="pill">
+        <img src="assets/play.png" alt="" />
+        Google Play Store
+      </span>
+      <span class="pill">
+        <img src="assets/document.png" alt="" />
+        LGPD · Lei nº 13.709/2018
+      </span>
+    </div>
+  </div>
+</section>
+
+<main class="layout">
 
   <!-- Intro -->
   <div class="card">
@@ -666,9 +372,9 @@
   <!-- Exclusão de Conta -->
   <div class="card">
     <div class="card-header">
-      <div class="card-num" style="background:#B91C1C;">🗑</div>
+      <div class="card-num danger">!</div>
       <span class="card-title">Exclusão de Conta</span>
-      <span class="card-badge" style="background:#FEE2E2;color:#B91C1C;border-color:#FECACA;">Guideline 5.1.1(v)</span>
+      <span class="card-badge danger">Guideline 5.1.1(v)</span>
     </div>
     <div class="card-body">
       <p>
@@ -677,11 +383,11 @@
         diretamente no aplicativo, sem necessidade de contato com suporte.
       </p>
       <p><strong>Como excluir sua conta:</strong></p>
-      <ol style="padding-left:18px;margin-bottom:14px;color:var(--text-sub);">
-        <li style="margin-bottom:8px;">Acesse <strong>Perfil</strong> no menu inferior</li>
-        <li style="margin-bottom:8px;">Toque em <strong>Segurança</strong></li>
-        <li style="margin-bottom:8px;">Toque em <strong>"Excluir minha conta"</strong></li>
-        <li style="margin-bottom:8px;">Confirme a exclusão na caixa de diálogo</li>
+      <ol class="ordered-list">
+        <li>Acesse <strong>Perfil</strong> no menu inferior</li>
+        <li>Toque em <strong>Segurança</strong></li>
+        <li>Toque em <strong>"Excluir minha conta"</strong></li>
+        <li>Confirme a exclusão na caixa de diálogo</li>
       </ol>
       <p>A exclusão de conta remove permanentemente:</p>
       <ul>
@@ -792,24 +498,23 @@
     <div class="card-body">
       <p>Para dúvidas, solicitações ou exercício de direitos relacionados à privacidade:</p>
       <p>📧 <a href="mailto:suporte.apprevisacar@gmail.com">suporte.apprevisacar@gmail.com</a></p>
-      <p style="margin-top:10px; font-size:0.85rem; color:var(--text-muted);">
+      <p class="muted-note">
         Esta política está disponível permanentemente nesta URL e também dentro do aplicativo,
         na seção Perfil → Sobre → Política de Privacidade.
       </p>
     </div>
   </div>
 
-</div><!-- /layout -->
+</main>
 
 <footer>
-  <p>
-    <img src="../assets/icon/icon.png" alt="AppRevisaCar" style="width:40px;height:40px;border-radius:10px;vertical-align:middle;margin-bottom:8px;display:block;margin-left:auto;margin-right:auto;">
-    <strong>AppRevisaCar</strong>
+  <p class="footer-brand">
+    <img src="assets/icon.png" alt="" />
+    <strong>RevisaCar</strong>
   </p>
-  <p>© 2026 · Todos os direitos reservados</p>
-  <p style="margin-top:6px;">Conforme LGPD (Lei nº 13.709/2018) &nbsp;·&nbsp; Apple App Store Guidelines &nbsp;·&nbsp; Google Play Policy</p>
+  <p>© 2025 · Todos os direitos reservados</p>
+  <p class="footer-note">Conforme LGPD (Lei nº 13.709/2018) &nbsp;·&nbsp; Apple App Store Guidelines &nbsp;·&nbsp; Google Play Policy</p>
 </footer>
 
 </body>
 </html>
-

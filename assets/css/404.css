@@ -1,0 +1,28 @@
+.not-found {
+    flex: 1;
+    display: grid;
+    align-content: center;
+    max-width: 680px;
+    padding: 72px 0 82px;
+}
+
+h1 {
+    margin-bottom: 0;
+    color: var(--primary-700);
+    font-size: 3.2rem;
+    line-height: 1.04;
+}
+
+.lead {
+    max-width: 600px;
+    margin: 20px 0 0;
+    color: var(--slate-700);
+    font-size: 1.14rem;
+    line-height: 1.65;
+}
+
+@media (max-width: 620px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+}
