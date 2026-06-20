@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "6UM733LSM9.com.revisacar.app",
+        "paths": [
+          "/resetar-senha",
+          "/resetar-senha/*"
+        ]
+      }
+    ]
+  }
+}
